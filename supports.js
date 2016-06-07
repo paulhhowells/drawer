@@ -9,17 +9,18 @@ app.supports = (function (window, document, undefined) {
     features = {
       transform : {
         test : function (el) {
+          var has2d;
           el.style.transform = 'translateX(0.5em)';
-          var has2d = window.getComputedStyle(el).getPropertyValue('transform').substr(0, 7);
+          has2d = window.getComputedStyle(el).getPropertyValue('transform').substr(0, 7);
           return (has2d === 'matrix(');
         }
       },
       transform3d : {
         style : 'transform',
         test : function (el) {
-          // el.style.transform = 'translate3d(1px, 1px, 1px)';
+          var has3d;
           el.style.transform = 'translateZ(1px)';
-          var has3d = window.getComputedStyle(el).getPropertyValue('transform').substr(0, 8);
+          has3d = window.getComputedStyle(el).getPropertyValue('transform').substr(0, 8);
           return (has3d === 'matrix3d');
         }
       },
