@@ -7,6 +7,13 @@ app.supports = (function (window, document, undefined) {
     supports = {},
     support,
     features = {
+      flex : {
+        // Testing for the contemporary flex spec, rather than the original one.
+        // Both style.flex and style.flexWrap will be tested.
+        test : function (el) {
+          return (el.style.flexWrap !== undefined);
+        }
+      },
       transform : {
         test : function (el) {
           var has2d;
