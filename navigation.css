@@ -1,0 +1,15 @@
+/* Navigation Block */
+
+.nav-block ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.nav-block li {
+  display: inline-block;
+}
+@media only screen and (max-width: 480px) {
+  .nav-block li {
+    display: list-item;
+  }
+}
