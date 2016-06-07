@@ -1,0 +1,76 @@
+/* Drawer Component */
+
+.drawer {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.drawer__inner {
+  position: relative;
+  width: 100%;
+}
+.drawer__button {
+  display: none;
+}
+.drawer__shelf {}
+
+.drawer__main {
+  position: relative;
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+@media only screen and (max-width: 480px) {
+  .drawer {}
+  .drawer.is-open {
+    /* Ensure that .drawer_shelf is not shorter than its contents when the
+    contents in .drawer__main are shorter. */
+    height: 100vh;
+  }
+
+  .drawer__button {
+    display: inline-block;
+  }
+
+  .drawer__inner {
+    left: 0; /* !important; */
+    transform: translate3d(0, 0, 0);
+    transition: transform 500ms ease;
+    backface-visibility: hidden;
+  }
+  .is-open .drawer__inner {
+    left: 90%;
+    background-color: #333;
+  }
+  .supports-transform3d .is-open .drawer__inner {
+    /* Replace positioning using left with translate3d for better performance */
+    left: 0;
+    transform: translate3d(90%, 0, 0) scale3d(1, 1, 1);
+  }
+
+  .drawer__shelf {
+    position: absolute;
+    top: 0;
+
+    width: 90%;
+    height: 100%;
+    left: 0;
+    transform: translate3d(-100%, 0, 0);
+    backface-visibility: hidden;
+
+    background-color: #ddd;
+    box-shadow: inset -0.5em 0 0.5em -0.25em rgba(0, 0, 0, 0.25);
+  }
+  .is-open .drawer__shelf {
+    min-height: 100vh;
+  }
+
+  .is-open .drawer__main {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -webkit-touch-callout: none;
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+    opacity: 0.3;
+  }
+}
