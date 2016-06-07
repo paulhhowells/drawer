@@ -1,0 +1,19 @@
+{
+  "name": "drawer",
+  "description": "Drawer Component",
+  "license": "MIT",
+  "version": "0.1.0",
+  "author": "Paul H Howells",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulhhowells/drawer.git"
+  },
+  "keywords": [
+    "RWD",
+    "responsive web design",
+    "mobile"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3"
+  }
+}
