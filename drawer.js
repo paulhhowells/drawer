@@ -5,15 +5,16 @@ app.drawer = (function (window, document, undefined) {
     show : 'show nav',
     hide : 'hide nav'
   };
-  return {
-    open : false,
-    click : click,
-  };
 
   // On ready.
   $(function () {
     $('.drawer__button').text(button.show);
   });
+
+  return {
+    open : false,
+    click : click,
+  };
 
   function click (ev) {
     app.drawer.open = !app.drawer.open;
