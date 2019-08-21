@@ -46,6 +46,7 @@ p img {
 
 /* Float Fix */
 .float-fix {
+  display: flow-root;
   *zoom: 1; /* IE */
 }
 .float-fix:before,
