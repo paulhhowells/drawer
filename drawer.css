@@ -20,7 +20,7 @@
   transition: opacity 500ms;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 40rem) {
   .drawer {}
   .drawer.is-open {
     /* Ensure that .drawer_shelf is not shorter than its contents when the
