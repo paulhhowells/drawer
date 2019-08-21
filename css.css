@@ -46,13 +46,14 @@ p img {
 
 /* Float Fix */
 .float-fix {
-  *zoom: 1; // IE
+  display: flow-root;
+  *zoom: 1; /* IE */
 }
 .float-fix:before,
 .float-fix:after {
   content: " ";
   display: table;
-  visibility: hidden; // Firefox
+  visibility: hidden; /* Firefox */
 }
 .float-fix:after {
   clear: both;
